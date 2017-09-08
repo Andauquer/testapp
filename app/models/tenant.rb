@@ -4,6 +4,7 @@ class Tenant < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
   has_many :members, dependent: :destroy
+  has_many :projects, dependent: :destroy
 
   def self.create_new_tenant(tenant_params, user_params, coupon_params)
 
