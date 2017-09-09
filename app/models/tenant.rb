@@ -5,6 +5,10 @@ class Tenant < ActiveRecord::Base
   validates_uniqueness_of :name
   has_many :members, dependent: :destroy
   has_many :projects, dependent: :destroy
+  
+  def can_create_projects?
+    (plan == 'free' && projects.count < 1) || (plan == 'premium')
+  end
 
   def self.create_new_tenant(tenant_params, user_params, coupon_params)
 
