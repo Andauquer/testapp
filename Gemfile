@@ -13,6 +13,8 @@ gem 'sendgrid-ruby'
 gem 'devise'
 # Use Milia fot multi tenancy
 gem 'milia'
+# Stripe for payments
+gem 'stripe'
 # Use Bootstrap for styling
 gem 'twitter-bootstrap-rails'
 # Use Devise-Bootstrap for styling
