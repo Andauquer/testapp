@@ -2,11 +2,12 @@
   <h3>Users for Project <%= @project.title %></h3>
   <strong>(Other than yourself)</strong>
 </div>
+
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Email</th>
-      <th><%=t '.actions', :default => t("helper.actions" %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
@@ -34,11 +35,11 @@
   <thead>
     <tr>
       <th>Email</th>
-      <th><%=t '.actions', :default => t("helper.actions" %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @project_users.each do |other_user| %>
+    <% @other_users.each do |other_user| %>
       <tr>
         <td><%= other_user.email %></td>
         <td>
@@ -53,4 +54,5 @@
 </table>
 
 <%= link_to 'Back', tenant_project_path(id: @project.id, tenant_id: @project.tenant_id),
-                                        :class = 'btn btn-primary' %>
+                                        :class => 'btn btn-primary' %>
+                                        
