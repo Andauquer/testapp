@@ -2,7 +2,7 @@ class Project < ActiveRecord::Base
   belongs_to :tenant
   
   has_many :artifacts, dependent: :destroy
-  has_many :user_projects
+  has_many :user_projects, dependent: :destroy
   has_many :users, through: :user_projects
   
   validates_uniqueness_of :title
